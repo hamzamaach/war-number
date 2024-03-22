@@ -1,5 +1,9 @@
 <?php
 session_start();
+if (isset($_POST["username"]) || isset($_POST["difficulty"])) {
+    $_SESSION["username"] = $_POST["username"];
+    $_SESSION["difficulty"] = $_POST["difficulty"];
+}
 if (!isset($_SESSION["username"]) || !isset($_SESSION["difficulty"])) {
     header("Location: index.php");
     exit;
